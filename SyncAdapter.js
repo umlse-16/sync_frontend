@@ -14,7 +14,7 @@ var SyncAdapter = function(params) {
 	 * @param persistable model to persist, must have a serialize function that returns a JSON object
      * @param options list of optional arguments or undefined
      */
-	this.create = function(persistable, options) {
+	this.create = function(persistable, options, cb) {
 		options = options || {};
 	};
 
@@ -23,7 +23,7 @@ var SyncAdapter = function(params) {
 	 * Options include 
 	 * @param persistable model, must have a serialize function and a $id field
 	 */
-	this.update = function(persistable, options) {
+	this.update = function(persistable, options, cb) {
 		options = options || {};
 	};
 
@@ -32,7 +32,7 @@ var SyncAdapter = function(params) {
      * Options include cacheOnly: boolean (check cache only)
      * @param id the objects id
      */
-	this.get = function(id, options) {
+	this.get = function(id, options, cb) {
 		options = options || {};
 	};
 
@@ -44,7 +44,7 @@ var SyncAdapter = function(params) {
 	 * Delete the entity from the cache and the remote database by id
 	 * @param m the object's id or the object with a $id field
 	 */
-	this.del = function(m) {
+	this.del = function(m, cb) {
 		var id = m;
 		if(typeof m === 'string' || m instanceof String)
 			m;
