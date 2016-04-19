@@ -1,0 +1,14 @@
+{
+  "name": "sync_frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "SyncAdapter.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "buildtest": "browserify main.js -o bundle.js"
+  },
+  "author": "",
+  "license": "MIT"
+}
