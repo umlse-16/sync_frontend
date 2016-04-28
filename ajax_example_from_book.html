@@ -1,0 +1,70 @@
+/*
+This is mostly borrowed from an example from Foundations of Ajax by Asleson and Shutta
+that serves as an outline on how to use AJAX with JSON.
+Adapted and modified for use on project.
+
+
+date : 4/28/16
+student: Kevin Ornellas
+*/
+
+<!DOCTYPE html>
+<html xmlns="/sync">
+<head>
+<title>Adapted from Example from ch 3 Foundations of Ajax by Asleson and Schutta </title>
+
+<script type ="text/javascript" src="json.js"></script>
+<script type="text/javascript">
+
+var xmlHttp;
+
+function createXMLHttpRequest()  {
+if(window.ActiveXObject)
+{
+xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+else if (window.XMLHttpRequest)
+{
+xmlHttp = new XMLHttpRequest();
+}
+}
+
+function pullRecipe()
+{
+var recipe = getRecipeByID()
+{
+var mydocid = document.getElementByID;
+var lastmodded = mydocid.lastModified;
+var RecipeAsJSON = JSON.stringify(recipe);
+
+//g
+}
+
+var url = "RecipeJSON?timeStamp" + new Date().getTime();
+
+createXMLHttpRequest();
+xmlHttp.open("POST", url, true);
+xmlHttp.onreadystatechange = handleStateChange;
+xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded;");
+xmlHttp.send(recipe);
+}
+
+function handleStateChange() {
+if(xmlHttp.readyState ==4){
+if(xmlHttp.status ==200)
+{
+// var idOfRecipe = 
+// need to parse
+
+
+}
+}
+
+}
+
+}
+</head>
+<body>
+</body>
+</html>
+
